@@ -1,0 +1,14 @@
+:root {
+    --paragraph: rgba(255, 0, 0, 1);    
+    --sub-title-font-weight: 600;
+    --sub-title-font-size: 40px;
+    --sub-title-letter-spacing: 0px;
+    --sub-title-line-height: 125%;
+    --sub-title-font-style: normal;    
+    --paragraph-font-weight: 100;
+    --paragraph-font-size: 25px;
+    --paragraph-letter-spacing: 0px;
+    --paragraph-line-height: 125%;
+    --paragraph-font-style: normal;
+  }
+  
