@@ -468,7 +468,7 @@ a:hover {
   vertical-align: middle;
 }
 .slideshow-container {
-  max-width: 1000px;
+  max-width: 48em;
   position: relative;
   margin: auto;
 }
