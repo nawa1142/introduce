@@ -2,9 +2,9 @@
 function navcollapse() {
     var dropdown = document.getElementById("myDropdown");
     dropdown.classList.toggle("show");
-  }
+}
   
-  window.onclick = function(event) {
+window.onclick = function(event) {
     if (!event.target.matches('.nav-icon')) {
       var dropdowns = document.getElementsByClassName("dropdown-content");
       for (var i = 0; i < dropdowns.length; i++) {
@@ -14,7 +14,15 @@ function navcollapse() {
         }
       }
     }
-  }
+}
+window.addEventListener('scroll', function() {
+    var navbar = document.querySelector('.navbar');
+    if(window.scrollY > 0) {
+      navbar.style.height = '5%';
+    } else {
+      navbar.style.height = '15%';
+    }
+});
 
 /*polygon transition*/
 window.addEventListener('scroll', function() {
@@ -40,16 +48,18 @@ var mlink = document.getElementById("modal-link");
 var span = document.getElementsByClassName("close")[0];
 
 mlink.onclick = function() {
-    modal.style.display = "block";
+    modal.style.opacity = "1";
+    modal.style.visibility = "visible";
+    modal.style.transition = "opacity 0.4s, visibility 0.4s";
 }
-
 span.onclick = function() {
-    modal.style.display = "none";
+    modal.style.opacity = "0";
+    modal.style.visibility = "hidden";
 }
-
 window.onclick = function(event) {
     if (event.target == modal) {
-        modal.style.display = "none";
+        modal.style.opacity = "0";
+        modal.style.visibility = "hidden";
     }
 }
 

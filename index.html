@@ -13,14 +13,45 @@
         body{
             font-family: 'Itim', cursive;
             font-family: 'Kanit', sans-serif;
+            background-image: url(../Introduce-project-pratice/image/bg1.png);
+            background-size: auto;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: 80% 40%;
+            overflow-x: hidden;
+            min-height: 2000px;
+            margin: 0;
+            padding: 0;
+            animation: bg-scroll linear;
+            animation-timeline: view();  
+        }
+        @keyframes bg-scroll {
+            0%{
+                background-position: 80% 40%;
+            }
+            20%{
+                background-position: 67.6% 48%;
+            }
+            40%{
+                background-position: 55.2% 56%;
+            }
+            60%{
+                background-position: 42.8% 56%;
+            }
+            80%{
+                background-position: 30.4% 48%;
+            }
+            100%{
+                background-position: 18% 40%;
+            }            
         }
     </style>
 </head>
-<body>
+<body>    
     <!--ส่วนของหัวเว็บ-->
     <header class="nav-container" id="head">
         <div class="navbar">                
-            <a href="index.html" class="nav-title">My Introduce</a>                        
+            <a href="index.html" class="nav-title">My Introduce</a>
             <nav class="navbar-1" id="navbar-1">
                 <ul class="navbar-list">
                     <li class="nav-item">
@@ -92,11 +123,21 @@
     <!--ส่วนนำทางในหน้าเว็บด้านข้าง-->
     <aside class="sidenav">
         <nav class="sidenavbar" id="side-navbar">
-            <a href="#head" id="sidebtn1" class="btn-dark"></a>
-            <a href="#personal" id="sidebtn2" class="btn-dark"></a>
-            <a href="#educate" id="sidebtn3" class="btn-dark"></a>
-            <a href="#work-exp" id="sidebtn4" class="btn-dark"></a>
-            <a href="#simple-projects" id="sidebtn5" class="btn-dark"></a>
+            <a href="#head" id="sidebtn1" class="btn-dark tooltip">
+                <span class="tooltiptext">กลับสู่ด้านบน</span>
+            </a>
+            <a href="#personal" id="sidebtn2" class="btn-dark tooltip">
+                <span class="tooltiptext">ข้อมูลส่วนตัว</span>
+            </a>
+            <a href="#educate" id="sidebtn3" class="btn-dark tooltip">
+                <span class="tooltiptext">ประวัติการศึกษา</span>
+            </a>
+            <a href="#work-exp" id="sidebtn4" class="btn-dark tooltip">
+                <span class="tooltiptext">ประสบการณ์ทำงาน</span>
+            </a>
+            <a href="#simple-projects" id="sidebtn5" class="btn-dark tooltip">
+                <span class="tooltiptext">ผลงานที่ผ่านมา</span>
+            </a>
         </nav>
     </aside>
 
@@ -107,14 +148,14 @@
                 <img class="welcomepic" style="width: 100%;" src="https://cdn.pixabay.com/photo/2016/08/18/10/31/view-1602552_1280.jpg" alt="welcomePic">
                 <div class="welcome-text-box">                   
                     <div class="welcome-text">
-                        <h1 id="fade-in-1">Welcome to my corner! </h1>                        
-                        <p id="fade-in-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, error asperiores alias accusantium veritatis commodi minima non esse in nostrum at mollitia velit omnis harum architecto excepturi possimus eaque consequatur.</p>
+                        <h1 class="fadein-text1">Welcome to my corner! </h1>                        
+                        <p class="fadein-text1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, error asperiores alias accusantium veritatis commodi minima non esse in nostrum at mollitia velit omnis harum architecto excepturi possimus eaque consequatur.</p>
                     </div>                   
                 </div>
             </div>
         </div>
     </section>
-                                        
+            
     <!--ส่วนเนื้อหาที่1 ประวัติ สำหรับ desktop-->
     <section class="personal" id="personal">
         <div class="container">

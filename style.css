@@ -81,6 +81,7 @@ a:hover {
   margin: 0;
   display: flex;
   position: fixed;
+  width: 100%;
   top: 0;
   left: 0;
   right: 0;
@@ -88,12 +89,18 @@ a:hover {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  height: 15%;
+  transition: 0.3s;
 }
 .nav-title {
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
-  color: #fff;
+  color: #ffffff;
+  transition: ease 0.4s;
+}
+.nav-title:hover {
+  color: #5a5969;
 }
 .navbar-list {
   list-style: none;
@@ -108,6 +115,11 @@ a:hover {
   text-decoration: none;
   color: #ffffff;
   font-size: 1rem;
+  transition: ease 0.4s;
+}
+.nav-link:hover,
+.a-modal:hover {
+  color: #5a5969;
 }
 .dropdown-nav {
   display: none;
@@ -127,7 +139,7 @@ a:hover {
 
 /*modal*/
 .modal {
-  display: none;
+  opacity: 0;
   position: fixed;
   z-index: 1000;
   padding-top: 100px;
@@ -191,6 +203,34 @@ a:hover {
   border-radius: 3px;
   cursor: pointer;
   margin-bottom: 2px;
+  transition: ease 0.5s;
+}
+.btn-dark:hover{
+  background-color: #5a5969;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+.tooltiptext {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  width: 120px;
+  font-size: 0.75rem;
+  background-color: #555;
+  color: #fff;
+  border-radius: 6px;
+  text-align: center;
+  padding: 5px 0;
+  z-index: 1;
+  bottom: 10px;
+  right: 25px;
+  transition: opacity 0.7s;  
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
 
 /*welcom pic*/
@@ -210,7 +250,17 @@ a:hover {
 .welcomepic{
   height: 100%;
   width: auto;
+  top: 0;
+  left: 0;
+  animation: fadeout linear forwards;
+  animation-timeline: view();  
+  animation-range: exit;
 }
+@keyframes fadeout{
+  25% {opacity: 0.8;}
+  85% {opacity: 0; scale: 0.8;}
+}
+
 .welcome-text-box{
   position: absolute;
   display: flex;
@@ -419,6 +469,17 @@ a:hover {
   background-color: white;
   position: relative;
   border-radius: 6px;
+  opacity: 1;
+  scale: 1;
+  animation: fadein-2 0.9s linear;
+  animation-timeline: view();
+  animation-range-start: 0px;
+  animation-range-end: 500px;
+}
+
+@keyframes fadein-2{  
+  from { opacity: 0; scale: 0.2; }
+  to { opacity: 1; scale: 1; }
 }
 
 /*work-exp*/
@@ -471,7 +532,7 @@ a:hover {
   max-width: 48em;
   position: relative;
   margin: auto;
-}
+} 
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -484,7 +545,7 @@ a:hover {
   font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
-  user-select: none;
+  user-select: none;  
 }
 .next {
   right: 0;
@@ -515,10 +576,6 @@ a:hover {
 .active, .dot:hover {
   background-color: #717171;
 }
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
 
 /*footer*/
 .footer{
@@ -530,27 +587,24 @@ a:hover {
   margin-top: 10vh;
 }
 
+/*Animation*/
+.fadein-text1{
+  opacity: 0;
+  scale: 0.5;
+  animation: fadeIn-1 1.3s ease-in-out forwards;  
+}
+@keyframes fadeIn-1 {
+  from { opacity: 0; scale: 0.5; }
+  to { opacity: 1; scale: 1.1; }
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
 @keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}
-}
-
-@keyframes fadeIn-1 {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes fadeIn-2{
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-#fade-in-1{
-  animation: fadeIn-1 1.5s ease-in-out forwards;
-}
-
-#fade-in-2{
-  animation: fadeIn-2 3s ease-in-out forwards;
 }
 
 /*mobiles*/
